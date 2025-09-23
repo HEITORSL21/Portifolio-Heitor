@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Portfólio - Heitor da Silva Lima</title>
   <link rel="stylesheet" href="style.css" />
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+  integrity="sha512-papI4DdN8YFqzv6IoBtEtJ8V7JKYlz/mQ7vQxL7vHR+6Y2a/HRxReEcF6sYcV+7vY6kVf6nO+fXG+76/S2pIXw=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
 </head>
 <body>
 
@@ -25,11 +32,25 @@
     <nav id="menu" aria-label="Menu de navegação principal">
       <button type="button" data-target="hero">Início</button>
       <button type="button" data-target="sobre">Sobre Mim</button>
+      <button type="button" data-target="portfolio">Projetos</button>
       <button type="button" data-target="info-pessoal">Informações</button>
       <button type="button" data-target="formacao">Formação</button>
       <button type="button" data-target="habilidades">Habilidades</button>
       <button type="button" data-target="objetivos">Objetivos</button>
       <button type="button" data-target="complementares">Complementares</button>
+    <!-- Link GitHub no menu -->
+<a
+  href="https://github.com/HEITORSL21"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="nav-social git-link"
+  aria-label="GitHub de Heitor"
+>
+  GitHub
+  <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-left:6px">
+    <path d="M12 .297a12 12 0 00-3.797 23.4c.6.111.82-.26.82-.577 0-.285-.01-1.04-.015-2.04-3.338.725-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.73.083-.73 1.205.085 1.84 1.238 1.84 1.238 1.07 1.835 2.81 1.305 3.495.997.108-.775.42-1.305.763-1.605-2.665-.303-5.467-1.333-5.467-5.93 0-1.31.47-2.381 1.235-3.221-.124-.303-.536-1.523.117-3.176 0 0 1.008-.323 3.3 1.23a11.47 11.47 0 016.003 0c2.29-1.553 3.296-1.23 3.296-1.23.655 1.653.243 2.873.12 3.176.77.84 1.233 1.911 1.233 3.221 0 4.61-2.807 5.624-5.48 5.92.43.37.81 1.102.81 2.222 0 1.604-.015 2.896-.015 3.29 0 .32.216.694.825.576A12 12 0 0012 .297"/>
+  </svg>
+</a>
     </nav>
 
     <!-- Hero -->
@@ -44,7 +65,7 @@
     <!-- Sobre Mim -->
     <section id="sobre" class="fade-in" aria-label="Sobre Mim">
       <img src="https://i.postimg.cc/rs7y4NjV/Heitor.png" alt="Foto de Heitor da Silva Lima" />
-      <div>
+      <div id="scroll-reveal-text" class="scroll-reveal-text">
         <p>
           Sou estudante do Instituto Federal do Piauí - Campus Picos, apaixonado por design, tecnologia e inovação.
           Tenho experiência com Photoshop, CorelDraw, edição de vídeo e noções de programação.
@@ -52,6 +73,40 @@
         </p>
       </div>
     </section>
+<!--Projetos-->
+<section id="portfolio">
+  <h2>Meus Projetos</h2>
+
+  <!-- Lista estática para fallback / SEO -->
+  <div class="static-projects">
+    <ul>
+      <li class="static-card">
+        <img src="https://i.postimg.cc/WpXxHtYM/image.png" alt="FLUXO" loading="lazy">
+        <h3>Fluxo</h3>
+        <p>FLUXO é um site futurista de design e desenvolvimento web, com animações interativas, partículas em movimento e experiência visual imersiva para apresentar projetos e serviços de forma moderna e impactante.</p>
+        <span class="tags">HTML, CSS, JavaScript</span>
+        <a href="https://heitorsl21.github.io/FLUXO/" target="_blank">Ver Projeto</a>
+      </li>
+      <li class="static-card">
+        <img src="https://i.postimg.cc/QCtY3kYc/image.png" alt="Portfólio" loading="lazy">
+        <h3>PORTFÓLIO</h3>
+        <p>Portfólio de Heitor: projetos interativos em web, design gráfico e programação.</p>
+        <span class="tags">HTML, CSS, JavaScript</span>
+        <a href="https://heitorsl21.github.io/Portifolio-Heitor/" target="_blank">Ver Projeto</a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Carrossel dinâmico -->
+  <div class="carousel-container" style="display: none;" role="region" aria-label="Carrossel interativo de projetos">
+    <div class="carousel-wrapper">
+      <div class="carousel-track" id="carousel-track"></div>
+    </div>
+    <button class="nav-btn prev-btn" aria-label="Slide anterior" aria-controls="carousel-track">‹</button>
+    <button class="nav-btn next-btn" aria-label="Slide seguinte" aria-controls="carousel-track">›</button>
+    <div class="dots-container" id="dots-container" aria-label="Indicadores de posição"></div>
+  </div>
+</section>
 
     <!-- Informações Pessoais -->
     <section id="info-pessoal" class="fade-in">
@@ -82,11 +137,11 @@
       <div class="info-cards">
         <div class="card flip-card">
           <div class="card-front">HTML</div>
-          <div class="card-back">Básico</div>
+          <div class="card-back">Intermediário</div>
         </div>
         <div class="card flip-card">
-          <div class="card-front">Microsoft Excel</div>
-          <div class="card-back">Básico</div>
+          <div class="card-front">Pacote Microsoft</div>
+          <div class="card-back">Intermediário</div>
         </div>
         <div class="card flip-card">
           <div class="card-front">Linux</div>
@@ -127,6 +182,57 @@
       </div>
     </section>
 
+   <!-- Profile Card 3D Cyberpunk -->
+<div class="card-3d fade-in" id="profile-card">
+  <div class="card-tilt">
+    <div class="card-inner">
+      
+      <!-- Frente -->
+      <div class="card-front">
+        <img src="https://i.postimg.cc/rs7y4NjV/Heitor.png" alt="Foto de Heitor da Silva Lima" />
+        <div class="socials-top">
+          <a href="https://github.com/HEITORSL21" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://wa.me/5589994386200" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <h2>Heitor da Silva Lima</h2>
+        <p>Estudante apaixonado por design, tecnologia e programação.</p>
+        <br></br>
+        <div class="skills">
+          <span>HTML</span><span>CSS</span><span>JS</span>
+        </div>
+      </div>
+
+      <!-- Verso -->
+      <div class="card-back">
+        <h2>Contatos</h2>
+        <br></br>
+        <div class="social-links">
+          <a href="https://github.com/HEITORSL21" target="_blank" aria-label="GitHub">
+  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" viewBox="0 0 24 24">
+    <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 
+             0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.744.082-.729.082-.729 
+             1.205.084 1.84 1.237 1.84 1.237 1.07 1.835 2.807 1.305 3.492.998.108-.775.418-1.305.76-1.605-2.665-.305-5.467-1.332-5.467-5.931 
+             0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23a11.52 11.52 0 0 1 3-.405c1.02.005 2.045.138 3 .405 
+             2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 
+             0 4.61-2.805 5.625-5.475 5.921.435.372.81 1.096.81 2.21 
+             0 1.595-.015 2.875-.015 3.265 0 .315.21.694.825.577C20.565 22.092 24 17.592 24 12.297 
+             c0-6.627-5.373-12-12-12"/>
+  </svg>
+</a>
+          <a href="https://wa.me/5589994386200" target="_blank" aria-label="WhatsApp">
+<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+  <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+</svg>
+</a>
+
+        </div> 
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
     <!-- WhatsApp -->
     <div id="whatsapp-btn" onclick="window.open('https://wa.me/5589994386200','_blank')" aria-label="Enviar WhatsApp">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="#B197FC" d="M476.9 161.1C435 119.1 379.2 96 319.9 96C197.5 96 97.9 195.6 97.9 318C97.9 357.1 108.1 395.3 127.5 429L96 544L213.7 513.1C246.1 530.8 282.6 540.1 319.8 540.1L319.9 540.1C442.2 540.1 544 440.5 544 318.1C544 258.8 518.8 203.1 476.9 161.1zM319.9 502.7C286.7 502.7 254.2 493.8 225.9 477L219.2 473L149.4 491.3L168 423.2L163.6 416.2C145.1 386.8 135.4 352.9 135.4 318C135.4 216.3 218.2 133.5 320 133.5C369.3 133.5 415.6 152.7 450.4 187.6C485.2 222.5 506.6 268.8 506.5 318.1C506.5 419.9 421.6 502.7 319.9 502.7zM421.1 364.5C415.6 361.7 388.3 348.3 383.2 346.5C378.1 344.6 374.4 343.7 370.7 349.3C367 354.9 356.4 367.3 353.1 371.1C349.9 374.8 346.6 375.3 341.1 372.5C308.5 356.2 287.1 343.4 265.6 306.5C259.9 296.7 271.3 297.4 281.9 276.2C283.7 272.5 282.8 269.3 281.4 266.5C280 263.7 268.9 236.4 264.3 225.3C259.8 214.5 255.2 216 251.8 215.8C248.6 215.6 244.9 215.6 241.2 215.6C237.5 215.6 231.5 217 226.4 222.5C221.3 228.1 207 241.5 207 268.8C207 296.1 226.9 322.5 229.6 326.2C232.4 329.9 268.7 385.9 324.4 410C359.6 425.2 373.4 426.5 391 423.9C401.7 422.3 423.8 410.5 428.4 397.5C433 384.5 433 373.4 431.6 371.1C430.3 368.6 426.6 367.2 421.1 364.5z"/></svg>
@@ -135,10 +241,18 @@
     <!-- Rodapé -->
     <footer>
       <p>© 2025 Heitor da Silva Lima | Todos os direitos reservados</p>
+    <div class="social-footer" aria-label="Redes sociais">
+  <a href="https://github.com/HEITORSL21" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Heitor" class="social-icon">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M12 .297a12 12 0 00-3.797 23.4c.6.111.82-.26.82-.577 0-.285-.01-1.04-.015-2.04-3.338.725-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.73.083-.73 1.205.085 1.84 1.238 1.84 1.238 1.07 1.835 2.81 1.305 3.495.997.108-.775.42-1.305.763-1.605-2.665-.303-5.467-1.333-5.467-5.93 0-1.31.47-2.381 1.235-3.221-.124-.303-.536-1.523.117-3.176 0 0 1.008-.323 3.3 1.23a11.47 11.47 0 016.003 0c2.29-1.553 3.296-1.23 3.296-1.23.655 1.653.243 2.873.12 3.176.77.84 1.233 1.911 1.233 3.221 0 4.61-2.807 5.624-5.48 5.92.43.37.81 1.102.81 2.222 0 1.604-.015 2.896-.015 3.29 0 .32.216.694.825.576A12 12 0 0012 .297"/>
+    </svg>
+  </a>
+</div>
     </footer>
-
   </div> <!-- #site-content -->
-
   <script src="script.js"></script>
+  <!-- GSAP + ScrollTrigger -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 </body>
 </html>
